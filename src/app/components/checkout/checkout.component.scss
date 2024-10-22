@@ -1,0 +1,214 @@
+.row{
+
+    width: 100%;
+    height: 100%;
+    display: flex;
+    margin: auto;
+    padding: 20px;
+}
+
+.shoppingbag{
+
+    width: 60%;
+    height: 100%;
+    padding: 10px;
+    position: relative;
+}
+
+.shoppingbag .info h6{
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
+.shoppingbag .return{
+    padding: 10px;
+    margin: 10px 0;
+    background-color:#efe4ce ;
+}
+
+.shoppingbag .return h5{
+    font-size: 15px;
+}
+
+.shoppingbag .return span{
+    font-weight: bold;
+}
+
+.shoppingbag .product{
+
+    width: 100%;
+    height: 250px;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+
+.shoppingbag .product .productimg{
+
+    width: 15%;
+    height: 70%;
+}
+
+.shoppingbag .product .productimg img{
+    width: 100%;
+    height: 100%;
+}
+
+
+.shoppingbag .product .productdetails{
+    width: 65%;
+    position: relative;
+}
+
+.shoppingbag .product i{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    scale: 1.5;
+    opacity: 0.6;
+    z-index: 1;
+}
+
+.shoppingbag .product i:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+
+
+.shoppingbag .product .productdetails .title{
+
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.shoppingbag .product .productdetails .price{
+    margin-top: 10px;
+}
+
+.shoppingbag .product .productcount{
+    width: 15%;
+
+    position: relative;
+}
+
+
+.shoppingbag .product .productcount select{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 10px 20px;
+    border: 1px solid black;
+}
+
+.shoppingbag .product .productdetails a{
+    color: black;
+    position: absolute;
+    bottom: 35px;
+}
+
+
+.shoppingbag .product .productdetails .description{
+    opacity: 0.8;
+    font-size: smaller;
+    position: absolute;
+    top: 100px;
+}
+
+.checkout{
+    position: relative;
+    width: 35%;
+    height: 800px;
+    margin-left: 5%;
+    right: 15px;
+}
+
+
+.checkout .title{
+    text-align: center;
+
+    padding: 20px;
+}
+
+
+.checkout .title h5{
+    font-weight: bold;
+    font-size: 25px;
+}
+
+
+.checkout .totalprice{
+    position: relative;
+    padding: 20px;
+
+}
+
+.checkout .totalprice h6{
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+.checkout .totalprice h6.number{
+    position: absolute;
+    right: 15px;
+}
+
+.checkout button{
+    background-color: black;
+    color: white;
+    width: 100%;
+    padding: 20px 60px;
+    font-weight: bold;
+}
+
+
+.checkout .visa{
+    margin-top: 20px;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    border-top: 1px solid hsl(0, 0%, 50%,0.6);
+}
+
+.checkout .delivery{
+    background-color: tomato;
+    width: 100%;
+
+}
+
+.checkout .delivery .standard{
+    display: flex;
+    align-items: center;
+    position: absolute;
+}
+
+.checkout .delivery .standard .text{
+    position: relative;
+    left: -40px;
+}
+
+.checkout .delivery .standard .img{
+    scale: 0.5;
+
+    position: relative;
+    left: -20px;
+}
+
+
+
+.checkout .delivery .sameday .text{
+
+    position: relative;
+    left: -40px;
+}
+
+.checkout .delivery .sameday .img{
+    scale: 0.5;
+    position: relative;
+    left: -20px;
+}

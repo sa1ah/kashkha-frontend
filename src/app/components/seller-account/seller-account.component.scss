@@ -1,0 +1,175 @@
+*{
+    box-sizing: border-box;
+}
+
+
+.AccountHeader{
+
+    width: 100%;
+    height: 400px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.AccountHeader .container{
+
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.AccountHeader .container .account{
+
+    width: 90%;
+    height: 70%;
+    display: flex;
+    align-items: center;
+}
+
+.AccountHeader .container .account .account_picture{
+
+    height: 100%;
+    width: 30%;
+    display: flex;
+    position: relative;
+}
+
+
+.AccountHeader .container .account .account_picture img{
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    scale: 0.7;
+    position: absolute;
+    right: 0;
+    margin-bottom: 50px;
+    top: -35px;
+}
+
+.AccountHeader .container .account .account_Description{
+
+    width: 70%;
+    height: 90%;
+}
+
+.AccountHeader .container .account .account_Description .header .title{
+
+    display: flex;
+    align-items: center;
+}
+
+
+.AccountHeader .container .account .account_Description .header .title i{
+
+    padding: 5px 10px;
+    margin-left: 20px;
+    border: 1px solid hsl(0, 0%, 50%, 0.3);
+    border-radius: 4px;
+}
+
+.AccountHeader .container .account .account_Description .header .connection{
+    display: flex;
+}
+
+
+.AccountHeader .container .account .account_Description .header .connection button{
+    border: none;
+    scale: 0.8;
+    padding-top: 0;
+    margin-bottom: 5px;
+    position: relative;
+}
+
+.AccountHeader .container .account .account_Description .header .connection button i{
+    position: absolute;
+    top: 0;
+    margin-left: 2px;
+    opacity: 0.6;
+}
+
+.AccountHeader .container .account .account_Description .header .connection{
+    opacity: 0.8;
+}
+
+.AccountHeader .container .account .account_Description .header span{
+    margin-bottom: 15px;
+
+    display: inline-block;
+}
+
+.AccountHeader .container .account .account_Description .header .btns a{
+    text-decoration: none;
+    padding: 5px;
+    color: black;
+    background-color: hsl(0, 0%, 50%, 0.1);
+    margin: 4px 3px;
+    border-radius: 3px;
+    transition: 0.2s;
+}
+
+.AccountHeader .container .account .account_Description .header .btns a:hover{
+    background-color: hsl(0, 0%, 50%, 0.3);
+}
+
+
+
+
+
+
+
+
+
+.title {
+    position: relative; 
+}
+
+.dropdown {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: absolute; 
+    top: 40px; 
+    left: 320px; 
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000; 
+    display: none; 
+    border-radius: 5px;
+    width: auto;
+    text-align: center;
+    max-height: 0; 
+    overflow: hidden; 
+    opacity: 0; 
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+.dropdown li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.dropdown li:hover {
+    background-color: #f0f0f0;
+}
+
+
+.show-dropdown .dropdown {
+    display: block; 
+    transition: 0.3s ease-in-out;
+    max-height: 300px; 
+    opacity: 1; 
+}
+
+
+
+.header .title .dropdown li a{
+    text-decoration: none;
+    color: black;
+}

@@ -1,0 +1,134 @@
+
+<hr>
+@if (ownerData) {
+    <div class="AccountHeader" *ngIf="ownerData" >
+        <div class="container">
+            <div class="account d-flex align-items-center">
+                <div class="account_picture ">
+                    <img [src]="ownerData.profilePicture" alt="">
+                </div>
+                <div class="account_Description">
+                    <div class="header">
+                        <div class="title" [ngClass]="{ 'show-dropdown': isDropdownVisible }">
+                            <h1> {{ownerData.shopName}} </h1>
+                            <i class="fa-solid fa-ellipsis" (click)="toggleDropdown()"></i>
+                        
+                            @if(ownerData){
+                                <ul class="dropdown">
+                                <li><a href="/add-product">Add Product</a></li>
+                                <li>Option 2</li>
+                                <li>Option 3</li>
+                                </ul>
+                            }
+                        </div>
+                        <p>Memory for every endeavor – get fast storage solutions that work seamlessly with your <br> devices.</p>
+                        <div class="connection">
+                            <p class="connect"><i class="fa-solid fa-link"></i>  Connect with samsung</p>
+                            <button><i class="fa-solid fa-sort-down"></i></button>
+                        </div>
+                        <span>Interests</span>
+                        <div class="btns">
+                            <a href="#">Memory</a>
+                            <a href="#">Storage</a>
+                            <a href="#">Photography</a>
+                            <a href="#">Technology</a>
+                            <a href="#">Ssd</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section>
+        <div class="container">
+            <div class="row" *ngIf="!isLoading">
+                <div [routerLink]="['/viewdetails', item.id]"  class="col-md-4" *ngFor="let item of ownerData.product">
+                <img [src]="item.pictureUrl" alt="Product Name" style="width: 100%; height: auto;">
+                <h5 class="mt-2"> Price:  $ {{item.price}} </h5>
+                <h2 class="mt-1">Name: {{item.name}} </h2>
+                <p class="mt-1"> Quantity: {{item.quantity}} </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+} @else if (shopOwner){
+    <div class="AccountHeader" *ngIf="shopOwner" >
+        <div class="container">
+            <div class="account d-flex align-items-center">
+                <div class="account_picture ">
+                    <img [src]="shopOwner.profilePicture" alt="">
+                </div>
+                <div class="account_Description">
+                    <div class="header">
+                        <div class="title" [ngClass]="{ 'show-dropdown': isDropdownVisible }">
+                            <h1> {{shopOwner.shopName}} </h1>
+                            <i class="fa-solid fa-ellipsis" (click)="toggleDropdown()"></i>
+                        
+                            @if(ownerData){
+                                <ul class="dropdown">
+                                <li><a href="/add-product">Add Product</a></li>
+                                </ul>
+                            }
+                        </div>
+                        <p>Memory for every endeavor – get fast storage solutions that work seamlessly with your <br> devices.</p>
+                        <div class="connection">
+                            <p class="connect"><i class="fa-solid fa-link"></i>  Connect with samsung</p>
+                            <button><i class="fa-solid fa-sort-down"></i></button>
+                        </div>
+                        <span>Interests</span>
+                        <div class="btns">
+                            <a href="#">Memory</a>
+                            <a href="#">Storage</a>
+                            <a href="#">Photography</a>
+                            <a href="#">Technology</a>
+                            <a href="#">Ssd</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section>
+    <hr>
+        <div class="container" *ngIf="shopOwner">
+            <div class="row" >
+                <div [routerLink]="['/viewdetails', item.id]"  class="col-md-4" *ngFor="let item of shopOwner.products">
+                <img [src]="item.pictureUrl" alt="Product Name" style="width: 100%; height: auto;">
+                <h5 class="mt-2"> Price: $ {{item.price}} </h5>
+                <h2 class="mt-1">Name: {{item.name}} </h2>
+                <p class="mt-1"> Quantity: {{item.quantity}} </p>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+
+<!-- @if(ownerData){
+    <section>
+        <div class="container">
+            <div class="row" *ngIf="!isLoading">
+                <div [routerLink]="['/viewdetails', item.id]"  class="col-md-4" *ngFor="let item of ownerData.product">
+                <img [src]="item.pictureUrl" alt="Product Name" style="width: 100%; height: auto;">
+                <h5 class="mt-2"> Price:  $ {{item.price}} </h5>
+                <h2 class="mt-1">Name: {{item.name}} </h2>
+                <p class="mt-1"> Quantity: {{item.quantity}} </p>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+@else if(shopOwner){
+<section>
+        <div class="container">
+            <div class="row" *ngIf="!isLoading">
+                <div [routerLink]="['/viewdetails', item.id]"  class="col-md-4" *ngFor="let item of shopOwner.products">
+                <img [src]="item.pictureUrl" alt="Product Name" style="width: 100%; height: auto;">
+                <h5 class="mt-2"> Price:  $ {{item.price}} </h5>
+                <h2 class="mt-1">Name: {{item.name}} </h2>
+                <p class="mt-1"> Quantity: {{item.quantity}} </p>
+                </div>
+            </div>
+        </div>
+    </section>
+}  -->

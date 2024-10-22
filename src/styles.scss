@@ -1,0 +1,123 @@
+/* You can add global styles to this file, and also import other style files */
+
+body{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: "HM Sans Regular","HM Sans Arabic Regular","sans-serif","Arial";
+    min-height: 100vh;
+    background-color: #faf9f8;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.isActive{
+    color:white;
+    background-color: brown;
+    padding: 7px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+} 
+
+.owl-carousel .owl-nav .owl-next:hover{
+    font-weight: bold;
+    background-color: #faf9f8;
+    color: black;
+    
+}
+.owl-carousel .owl-nav .owl-prev:hover{
+    font-weight: bold;
+    background-color: #faf9f8;
+    color: black;
+    
+}
+.owl-carousel .owl-nav .owl-next{
+    font-size: 20px;
+    position: absolute;
+    top: 37%;
+    left: -70px;
+    background-color: white;
+    color: black;
+    background-color: #faf9f8;
+}
+.owl-carousel .owl-nav .owl-prev{
+    font-size: 20px;
+    position: absolute;
+    top: 37%;
+    right: -70px;
+    background-color: white;
+    color: black;
+    background-color: #faf9f8;
+}
+
+
+////////////////////////////////////////////
+
+.owl-dots {
+    position: relative;
+    bottom: 40px;
+}
+
+.owl-dot {
+    height: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative;
+    bottom: 2px;
+    
+}
+
+div.owl-dots{
+    background-color: hsl(34, 44%, 69%);
+    box-sizing: border-box;
+}
+
+
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+    background-color: red;
+}
+
+.owl-theme[_ngcontent-ng-c2947750150]:hover .owl-nav.disabled + .owl-dots {
+    visibility: visible;
+    opacity: 1;  
+    transform: translateY(0);  
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+    margin-top: 6px;
+    margin-right: 1px;
+}
+
+.owl-theme .owl-nav.disabled + .owl-dots {
+    visibility: visible;
+    opacity: 0;
+    transform: translateY(20px); 
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin-right: 1px;
+}
+//////////////////
+.fav .owl-carousel .owl-item {
+  flex: 1 0 100%;
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  box-sizing: border-box; 
+}
+
+.fav .owl-carousel .owl-stage {
+  display: flex;
+  flex-wrap: nowrap;
+    max-width: 100%;
+    object-fit: cover;    
+}
+.fav .owl-carousel {
+  width: auto;
+  overflow: hidden;
+  position: relative;
+}
+
+

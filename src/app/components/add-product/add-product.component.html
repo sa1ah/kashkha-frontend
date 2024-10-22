@@ -1,0 +1,51 @@
+<section style="background-color: #f8f9fa; padding: 20px; border-radius: 8px;">
+    <div class="container">
+        <h3 class="mb-4 text-center text-uppercase">Add New Product</h3>
+        <form (ngSubmit)="handelProduct()" [formGroup]="ProductForm" class="form-control p-4 shadow-sm" style="border: none;">
+            <div class="row">
+                <div class="mb-3 col-md-6">
+                    <label for="Name" class="form-label">Product Name</label>
+                    <input formControlName="ProductName" type="text" id="Name" class="form-control" placeholder="Enter Product Name">
+                </div>
+                <div class="mb-3 col-md-6">
+                    <label for="Price" class="form-label">Price</label>
+                    <input type="number" id="Price" class="form-control" placeholder="Enter Product Price" formControlName="price">
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="category" class="form-label">Category</label>
+                <select name="category" id="category" class="form-control" formControlName="categoryId" >
+                    <option value="1">Woman</option>
+                    <option value="2">Men</option>
+                    <option value="3">Baby</option>
+                    <option value="4">Sport</option>
+                </select>
+            </div>
+            <div class="mb-3 .col-md-12">
+                <label for="description" class="form-label">Quantity</label>
+                <input formControlName="quantity" type="number" class="form-control" name="Quantity">
+            </div>
+            
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <textarea formControlName="description" id="description" class="form-control" rows="4" placeholder="Add Information about product..."></textarea>
+            </div>
+
+            <div class="row">
+                
+                <div class="mb-3 col-md-12">
+                    <label for="img" class="form-label">Product Image</label>
+                    <!-- <input type="file" id="img" class="form-control" onchange="previewImage(event)"> -->
+                    <input type="file" id="img" (change)="onFileSelected($event)" class="form-control" accept="image/*">
+                    
+                    <div id="imgPreview" class="mt-3"></div>
+                </div>
+            </div>
+
+            
+            <div class="text-center">
+                <button [disabled]="ProductForm.invalid" type="submit" class="btn btn-dark w-25 w-md-50 py-2"  routerLink="/seller-account">Submit</button>
+            </div>
+        </form>
+    </div>
+</section>

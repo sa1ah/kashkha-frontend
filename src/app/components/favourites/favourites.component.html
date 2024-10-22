@@ -1,0 +1,36 @@
+
+<section >
+    <div   class="container-fluid" >
+        <div  #targ id="targ">
+            <h1 >MY FAVOURITES</h1>
+            <hr>
+        </div>
+        <div  class="row" >
+            <div class="col-md-3 first"  *ngFor="let item of favUsr">
+                <owl-carousel-o class="fav"  [options]="imgSlider"  >
+                    <ng-template carouselSlide>
+                        <div class="productimg">
+                            <img  class="carouselSlide" [src]="item.productImage" alt="">
+                        </div>
+                    </ng-template>   
+                </owl-carousel-o>
+                <div class="description">
+                    <h2> {{item.productName}} </h2>
+                    <p>$ {{item.price}} </p>
+                </div>
+                <div class="addtobasket">
+                    <button (click)="addProdCart(item.productId, UId)" class="btn btn-dark">ADD TO CART </button>
+                    <button #btnremove (click)="removFav(item.favoriteId, btnremove)" class="btn btn-danger .col-6">Remove </button>
+                </div>
+            </div>
+            <div class="col-md-3"></div>
+            <div class="col-md-3"></div>
+            <div class="col-md-3"></div>
+        </div>
+        
+</div>
+</section>
+
+
+
+

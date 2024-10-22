@@ -1,0 +1,135 @@
+
+.container{
+    max-width: 100%;
+}
+section .container .row .first .head{
+    margin-bottom: 12px;
+}
+section .container .row .first{
+    margin-left: 50px;
+    background: #efe4ce;
+    width: 46%;
+    height: 55px;
+    padding: 0.9375rem 0.625rem;
+}
+section .container .row .first .head p{
+    display: inline;
+    font-size: 1rem;
+}
+section .container .row .first .head p span{
+    font-weight: bold;
+}
+
+section .container .row .first .bod .row p span{
+    color: #d6001c;
+    font-size: 0.875rem;
+}
+section .container .row .first .bod .row a{
+    font-size: 0.8125rem;
+    color: #000 ;
+}
+section .container .row .first .bod .row .trash svg{
+    margin-right: 20px;
+    cursor: pointer;
+    opacity: 0.3;
+}
+section .container .row .first .bod .row .trash svg:hover{
+    opacity: 1;
+}
+/////////////
+/// 
+section .container .row .second{
+    background-color: #faf9f8
+}
+section .container .row .second .bod{
+    padding: 20px;
+    background-color: #ffff;
+}
+section .container .row .second input:focus{
+    outline: none;
+}
+section .container .row .second input{
+    width: 80%;
+    height: 55px;
+    display: inline;
+    border: none;
+    border-radius: 0;
+    padding-left: 20px ;
+}
+
+
+section .container .row .second button[type="text"]:focus{
+    outline: none;
+    box-shadow: none;
+}
+section .container .row .second button[type="text"]:active{
+    outline: none;
+}
+section .container .row .second button{
+    width: 20%;
+    height: 54px;
+    letter-spacing: 1.14px;
+    text-transform: uppercase;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 0;
+    outline: none;
+    box-shadow: none;
+
+}
+
+section .container .row .second .bod > p{
+    margin-top: 40px;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+section .container .row .second .order{
+    display: flex;
+    justify-content: space-between;
+}
+section .container .row .second .order div span{
+    font-weight: bold;
+    margin: 0;
+}
+section .container .row .second .order p{
+    font-size: 0.875rem;
+    color: #777;
+}
+
+section .container .row .second .check{
+    text-align: center;
+}
+section .container .row .second .check h6{
+    font-size: 0.875rem;
+}
+section .container .row .second .check img{
+    height: 3.5rem;
+    width: auto;
+}
+section .container .row .second .foot{
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    
+}
+section .container .row .second .foot p{
+    font-weight: 600;
+    display: inline;
+    line-height: 1.125rem;
+    font-size: 0.875rem;
+}
+section .container .row .second .foot p span{
+    font-weight: normal;
+}
+section .container .row .second .foot{
+    margin-top: 15px;
+    background-color: #ffff;
+    padding: 10px;
+}
+section .container .row .second .foot div{
+    width: 100%;
+    height: 100%;
+}
+
+

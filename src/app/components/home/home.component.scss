@@ -1,0 +1,244 @@
+// .container{
+//     // width: 100%;
+//     // text-align: center;
+//     // overflow: hidden;
+//     // margin-bottom: 1.5rem;
+// }
+
+.container .row .anch a{
+    flex-shrink: 0;
+    // position: relative;
+    // box-sizing: border-box;
+    text-decoration: none;
+    color: #000;
+    outline: none;
+}
+// .container .row div{
+//     // text-align: center;
+// }
+
+.container .row div p{
+    // margin: 0;
+    font-size: 14px;
+    color: #222222;
+    line-height: 1;
+}
+//////////////////////////offer slider/////////////////////////////
+
+
+////////////////////////slider////////////////////////////
+/// 
+
+.container .row .trend .btn-trend{
+    margin-bottom: 10px;
+    // margin-top: 16px;
+    // overflow-x: scroll;
+    // overflow-y: hidden;
+    display: flex;
+    gap: 25px;
+    // white-space: nowrap;
+    // scrollbar-width: none;
+    justify-content: center;
+}
+
+
+
+// .contText{
+//     // position: absolute;
+//     // top: 80%;
+//     // left: 37%;
+// }
+.contText h2{
+    font-weight: 400;
+    font-size: 42px;
+    color: #ffff;
+    line-height: 46px;
+    white-space: break-spaces;
+    width: 100%;
+}
+.contText h3{
+    width: 100%;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    margin: 0 0 9px;
+    padding: 0;
+    white-space: break-spaces;
+    color: #ffff;
+}
+.contText button{
+    background-color: white;
+    color: #000;
+    border: none;
+}
+
+@media (max-width: 768px) {
+    .contText h2{
+        font-weight: 300;
+        font-size: 24px;
+        line-height: 23px;
+    }
+    .contText h3{
+        font-size: 10px;
+        font-weight: 200;
+        line-height: 10px;
+    }
+}
+
+// .owl-prev, .owl-next {
+//         width: 15px;
+//         height: 100px;
+//         position: absolute;
+//         top: 50%;
+//         transform: translateY(-50%);
+//         display: block !important;
+//         border:0px solid black;
+//     }
+//     .owl-prev { left: -20px; }
+//     .owl-next { right: -20px; }
+//     .owl-prev i, .owl-next i {transform : scale(2,5); color: #ccc;}
+
+////////////////////for you section/////////////////////////
+
+.container .recomend{
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    color: #000;
+    text-align: center !important;
+    color: #000000;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.owl-carousel .owl-nav .owl-next{
+    background-color: black ;
+}
+
+
+///////////////////////////////card///////////////////////////////////
+/// 
+
+
+.row{
+    max-width: 1224px;
+    width: 80%;
+    margin: auto;
+    padding: 40px 0;
+}
+.row .first{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 25px;
+}
+.row .first .colum{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 25px;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .row .first .colum{
+        gap: 10px;
+    }
+    .row .first{
+        gap: 10px;
+    }
+    .row .first .colum .container-img{
+   &:hover{
+        .icon{
+            display: none;
+        }
+        .profile{
+            display: none;
+
+        }
+        
+        // opacity: 0.7;
+        // transition: 0.2s ease;
+   }
+}
+    
+}
+
+.row .first .colum .container-img{
+    width: 100%;
+    height: auto;
+    position: relative;
+    cursor: pointer;
+}
+.row .first .colum .container-img{
+   &:hover{
+        .icon{
+            visibility: visible;
+        }
+        .profile{
+            visibility: visible;
+        }
+        
+        opacity: 0.7;
+        transition: 0.2s ease;
+   }
+}
+.row .first .colum .container-img img{
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+}
+
+
+.row .first .colum .container-img .icon{
+    position:absolute;
+    top: 5%;
+    left: 67%;
+    display: flex;
+    gap: 5px;
+    visibility: hidden;
+}
+
+.row .first .colum .container-img .icon svg{
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 3px;
+    background-color: #e4e0e0;
+}
+.row .first .colum .container-img .icon svg:hover{
+    background-color: #ffff;
+}
+
+////////////////////////
+.row .first .colum .container-img .profile{
+    position:absolute;
+    bottom: 5%;
+    left: 5%;
+    display: flex;
+    gap: 5px;
+    visibility: hidden;
+}
+
+.row .first .colum .container-img .profile img{
+    border-radius: 25px;
+    width: 32px;
+    height: 32px;
+}
+.row .first .colum .container-img .profile:hover{
+    img{
+        width: 34px;
+        height: 34px;
+        border: 1px solid black;
+    }
+    h5{
+    font-weight:900;
+    text-decoration:underline;
+    }
+}
+
+.row .first .colum .container-img .profile h5{
+    font-weight: 700;
+    font-size: 1rem;
+    margin-top: 5px;
+    color: black;
+}

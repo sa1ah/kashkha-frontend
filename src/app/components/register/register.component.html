@@ -1,0 +1,250 @@
+<section class="Form">
+  <div class="container-fluid">
+    <div class="row h-100 p-0">
+      <div class="col-md-6 p-0 first">
+        <div class="imgbanner">
+          <div class="overlay">
+            <h1>Make your Fit here</h1>
+            <h3>
+              Access 5,825,610 Collection, high-Quality Clothes you can't find
+              anywhere else.
+            </h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 w-60 my-4">
+        <div class="content">
+          <h1>Join Us</h1>
+          <p>
+            Already have an account? <a routerLink="/login" href="#">Login</a>
+          </p>
+          <form
+            (ngSubmit)="handeleRegister()"
+            enctype="multipart/form-data"
+            class="row g-4"
+            [formGroup]="registerFrom"
+          >
+            <div class="col-md-12">
+              <label for="name" class="form-label">Name</label>
+              <span style="color: red">*</span>
+              <input
+                type="text"
+                formControlName="name"
+                class="form-control"
+                id="name"
+              />
+              <div
+                *ngIf="
+                  registerFrom.get('name')?.errors &&
+                  registerFrom.get('name')?.touched
+                "
+                class="alert alert-danger"
+              >
+                <p *ngIf="registerFrom.get('name')?.getError('required')">
+                  Name is required
+                </p>
+                <p *ngIf="registerFrom.get('name')?.getError('minlength')">
+                  Name minlength 3
+                </p>
+                <p *ngIf="registerFrom.get('name')?.getError('maxlength')">
+                  Name is maxlength 30
+                </p>
+              </div>
+            </div>
+
+            <div class="col-md-12">
+              <label for="email" class="form-label">Email</label>
+              <span style="color: red">*</span>
+              <input
+                type="text"
+                formControlName="email"
+                class="form-control"
+                id="email"
+              />
+              <div
+                *ngIf="
+                  registerFrom.get('email')?.errors &&
+                  registerFrom.get('email')?.touched
+                "
+                class="alert alert-danger"
+              >
+                <p *ngIf="registerFrom.get('email')?.getError('required')">
+                  email is required
+                </p>
+                <p *ngIf="registerFrom.get('email')?.getError('email')">
+                  enter a vaild email
+                </p>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <label for="phone" class="form-label">Phone</label>
+              <span style="color: red">*</span>
+              <input
+                type="text"
+                formControlName="phone"
+                class="form-control"
+                id="phone"
+              />
+              <div
+                *ngIf="
+                  registerFrom.get('phone')?.errors &&
+                  registerFrom.get('phone')?.touched
+                "
+                class="alert alert-danger"
+              >
+                <p *ngIf="registerFrom.get('phone')?.getError('required')">
+                  phone is required
+                </p>
+                <p *ngIf="registerFrom.get('phone')?.getError('pattern')">
+                  enter a vaild phone
+                </p>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <label for="password" class="form-label">Password</label>
+              <span style="color: red">*</span>
+              <input
+                type="text"
+                formControlName="password"
+                class="form-control"
+                id="password"
+              />
+              <div
+                *ngIf="
+                  registerFrom.get('password')?.errors &&
+                  registerFrom.get('password')?.touched
+                "
+                class="alert alert-danger"
+              >
+                <p *ngIf="registerFrom.get('password')?.getError('required')">
+                  password is required
+                </p>
+                <p *ngIf="registerFrom.get('password')?.getError('pattern')">
+                  enter a vaild password
+                </p>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <label for="c_Password" class="form-label">Re-Password</label>
+              <span style="color: red">*</span>
+              <input
+                type="text"
+                formControlName="c_Password"
+                class="form-control"
+                id="c_Password"
+              />
+              <div
+                *ngIf="
+                  registerFrom.get('c_Password')?.errors &&
+                  registerFrom.get('c_Password')?.touched
+                "
+                class="alert alert-danger"
+              >
+                <p *ngIf="registerFrom.get('c_Password')?.getError('required')">
+                  c_Password is required
+                </p>
+                <p *ngIf="registerFrom.get('c_Password')?.getError('pattern')">
+                  enter a vaild Re-Password
+                </p>
+              </div>
+            </div>
+
+            <div class="col-md-12">
+              <label for="rolename">are you a Shop Owner?!</label>
+              <select
+                id="rolename"
+                name="rolename"
+                (change)="onRoleChange($event)"
+                class="form-control"
+                formControlName="rolename"
+              >
+                <option value="Customer">Customer</option>
+                <option value="Shop Owner">Shop Owner</option>
+              </select>
+            </div>
+
+              <!-- <div *ngIf="selectedRole === 'Shop Owner'" formGroupName="Shop">
+        <span style="color: red;">*</span>
+          <input type="text" class="form-control" id="shopName" formControlName="ShopName">
+
+          <div class="row">
+            <div class="col-md-6">
+            <span style="color: red;">*</span>
+              <input type="text" class="form-control" id="city"  formControlName="City" >
+            </div>
+            <div class="col-md-6">
+              
+            <span style="color: red;">*</span>
+              <input type="text" class="form-control" id="street" placeholder="ex:20, Elmostashfa, street." formControlName="Street">
+            </div>
+          </div>
+          
+          <span style="color: red;">*</span>
+          <input type="file"  class="form-control" id="profilePicture" formControlName="ProfilePicture" (change)="onFileSelected($event)"> -->
+
+              <!-- <button type="submit" (click)="handelShopForm($event)" ></button> -->
+
+              <!-- <label for="category" class="form-label">Category</label>
+        <span style="color: red;">*</span>
+          <select id="category" name="category" class="form-control" required>
+              <option value="woman">  Woman </option>
+              <option value="men">  Men </option>
+              <option value="sport">  Sport </option>
+              <option value="baby">  Baby </option>
+          </select> -->
+
+              <!-- </div> -->
+          
+            
+              <ng-container *ngIf="selectedRole === 'Shop Owner'" formGroupName="Shop">
+                <div class="row">
+                  <div class="col-md-12">
+                    <label for="ShopName" class="form-label">Shop Name</label>
+                    <input  class="form-control" type="text" formControlName="ShopName" placeholder="Shop Name"/>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <label for="City" class="form-label">city</label>
+                    <input  class="form-control" placeholder="ex:Ismailia" type="text" formControlName="City"/>
+                  </div>
+                    <div class="col-md-6">
+                    <label for="Street" class="form-label">Street</label>
+                    <input  class="form-control" placeholder="ex:20, Elmostashfa, street." type="text" formControlName="Street"/>
+                  </div>
+                </div>
+                  <div class="col-md-12">
+                    <label for="profilePicture" class="form-label">Profile Image</label>
+                    <input  class="form-control" type="file" (change)="onFileSelected($event)" accept="image/*"/>
+                  </div>
+                </ng-container>
+            
+          
+            
+
+            <!-- <div class="col-12">
+        <div class="form-check">
+          <input class="form-check-input" formControlName="checkbox" type="checkbox" value="" id="" >
+          <label class="form-check-label" for="invalidCheck2">
+            Agree to terms and conditions
+          </label>
+        </div>
+      </div> -->
+
+            <div class="col-md-12">
+              <button
+                [disabled]="registerFrom.invalid"
+                class="btn btn-dark w-100 my-3"
+                type="submit"
+              >
+                Join
+              </button>
+            </div>
+
+            <p *ngIf="errMess" class="alert alert-danger">{{ errMess }}</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

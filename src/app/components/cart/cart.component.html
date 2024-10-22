@@ -1,0 +1,79 @@
+<section *ngIf="cartDetails" >
+    <div class="container" style="height: 1000px;" >
+        <div class="row">
+            <div class="col-md-4 first" >
+                <div class="head">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32"><defs><path d="m11.89 5.904 4.5 2.216c.51.25.832.762.832 1.323v5.28c0 .56-.323 1.072-.832 1.322l-4.5 2.215a1.52 1.52 0 0 1-1.342 0l-4.5-2.216a1.474 1.474 0 0 1-.826-1.327V9.443c0-.561.323-1.073.832-1.322l4.5-2.217a1.52 1.52 0 0 1 1.336 0zM5.972 9.671v5.049a.737.737 0 0 0 .412.664l4.463 2.197v-5.509L5.972 9.671zm10.5-.177-4.875 2.4v5.684l4.459-2.195a.738.738 0 0 0 .416-.66v-5.23zm-8.384-1.55-1.7.838a.748.748 0 0 0-.217.16l4.871 2.4 1.973-.972-4.927-2.426zm2.801-1.379-1.962.966 4.927 2.426 2.288-1.126a.758.758 0 0 0-.087-.05l-4.5-2.215a.76.76 0 0 0-.666 0z" id="a"/></defs><g transform="translate(4.778 4.25)"><path d="M11.222 0c6.49 0 11.75 5.26 11.75 11.75s-5.26 11.75-11.75 11.75A11.748 11.748 0 0 1 .77 17.124a.417.417 0 1 1 .741-.381 10.914 10.914 0 0 0 9.711 5.924c6.03 0 10.917-4.888 10.917-10.917C22.139 5.72 17.25.833 11.222.833c-4.05 0-7.708 2.225-9.603 5.721a.417.417 0 1 1-.733-.397A11.746 11.746 0 0 1 11.222 0z"/><path d="m.79 3.603.025.063.69 2.25 2.283-.57a.417.417 0 0 1 .266.787l-.064.021-2.667.667-.045.009-.06.003-.066-.006-.063-.016-.055-.023-.037-.02-.057-.045-.034-.035-.037-.05-.036-.072-.815-2.655a.417.417 0 0 1 .738-.364l.034.056z"/><use xlink:href="#a"/></g></svg>
+                    <p><span>FREE Returns</span> Now Availbale Online!</p>
+                </div>
+                <div class="bod" *ngFor="let item of cartDetails.items">
+                    <div class="row bg-white py-4" >
+                        <div class="col-md-2 ">
+                            <img width="130" height="180" [src]="item.picUrl" alt="">
+                        </div>
+                        <div class="col-md-4">
+                            <h6>{{item.productName}}</h6>
+                            <p><span>EGP {{item.price}} </span></p>
+                            <a href="#">Move to favourites</a>
+                        </div>
+                        <div class="col-md-6 m-0 p-0 d-flex justify-content-end trash">
+                            <svg width="22px" height="22px" (click)="removeCart(item.productId)" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-6.000000, -6.000000)" fill-rule="nonzero"><polygon class="Path" transform="translate(17.000000, 17.000000) rotate(-180.000000) translate(-17.000000, -17.000000) " points="3.55271368e-15 -3.55271368e-15 34 -3.55271368e-15 34 34 3.55271368e-15 34"></polygon><path d="M7.125,10.914 L7.948,10.914 L9.868,26.966 C9.904,27.35 10.234,27.625 10.618,27.625 L23.382,27.625 C23.766,27.625 24.077,27.35 24.132,26.966 L26.052,10.914 L26.875,10.914 C27.295,10.914 27.625,10.584 27.625,10.164 C27.625,9.743 27.295,9.414 26.875,9.414 L21.133,9.414 L21.133,7.124 C21.133,6.704 20.803,6.374 20.383,6.374 L13.617,6.374 C13.197,6.374 12.867,6.704 12.867,7.124 L12.867,9.412 L7.124,9.412 C6.704,9.412 6.375,9.742 6.375,10.162 C6.375,10.584 6.722,10.913 7.125,10.913 L7.125,10.914 Z M14.367,7.876 L19.633,7.876 L19.633,9.413 L14.367,9.413 L14.367,7.876 L14.367,7.876 Z M24.534,10.914 L22.724,26.142 L11.276,26.142 L9.466,10.914 L24.534,10.914 Z M14.513,13.367 C14.093,13.367 13.763,13.697 13.763,14.117 L13.763,23.104 C13.763,23.525 14.093,23.854 14.513,23.854 C14.933,23.854 15.263,23.525 15.263,23.104 L15.263,14.117 C15.263,13.697 14.933,13.367 14.513,13.367 Z M19.487,13.367 C19.067,13.367 18.737,13.697 18.737,14.117 L18.737,23.104 C18.737,23.525 19.085,23.854 19.487,23.854 C19.907,23.854 20.237,23.525 20.237,23.104 L20.237,14.117 C20.237,13.697 19.907,13.367 19.487,13.367 Z" class="prefix__a" fill="#000000"></path></g></g></svg>
+                            
+                            <!-- <button class="btn btn-dark"> + </button>
+                            <button class="btn btn-dark"> - </button> -->
+                        </div>
+                    </div>
+                    <!-- <hr> -->
+                </div>
+                
+            </div>
+
+            <div class="col-md-2"></div>
+
+            <div class="col-md-4 second ">
+                <div class="col-md-12 chil mb-5">
+                    <div class="head">
+                        <input type="text" placeholder="Promo Code" id="promoCode">
+                        <button class="btn btn-dark" type="button">Done</button>
+                    </div>
+                </div>
+
+                <div class="bod" >
+                    <div class="order">
+                        <div>
+                            <span>Order Total</span>
+                            <p>Excliding delivery</p>
+                        </div>
+                        <div>
+                            <span> {{cartDetails.totalPrice}} EG </span>
+                            <p>Inclusive of VAT</p>
+                        </div>
+                    </div>
+                    <a ><button routerLink="/address" routerLinkActive="router-link-active" style="border-radius: 0;" class="btn btn-dark  w-100 ">CONTINUE TO CHECKOUT</button></a>
+                    <hr>
+                    <div class="check">
+                        <h6>Checkout quickly and securely with</h6>
+                        <img  src="../../../assets/images/Visa-Mastercard-1-1024x378.webp" alt="">
+                    </div>
+                </div>
+
+                <div class="foot">
+                    <div style="border-bottom: 0.0625rem solid #e0e0e0; ;">
+                        <img src="https://hm.store.alshaya.com/media/deliveryProposition/icon/stores/30/Truck-Outline.png" height="50px" width="50px" loading="lazy" alt="Standard Delivery">
+                        <p>Standard Delivery <span>- Free on all orders above EGP 1999. Delivered within 1-5 days.</span></p>
+                    </div>
+                    
+                    <div style="border-bottom: 0.0625rem solid #e0e0e0; ;">
+                        <img src="https://hm.store.alshaya.com/media/deliveryProposition/icon/stores/30/Same_day_delivery_2.png" height="50px" width="50px" loading="lazy" alt="Same Day Delivery">
+                        <p>Same Day Delivery <span>- Order before 12PM and receive same day delivery, Delivery free </span></p>
+                    </div>
+                    
+                    <div class="w-100">
+                        <img src="https://hm.store.alshaya.com/media/deliveryProposition/icon/stores/30/Click_Collect.png" height="50px" width="50px" loading="lazy" alt="Click &amp; Collect">
+                        <p>Click & Collect <span>- Order now and collect within 2-5 days</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

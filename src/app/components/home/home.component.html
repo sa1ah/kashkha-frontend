@@ -1,0 +1,363 @@
+    <app-nav-blank></app-nav-blank>
+    <section>
+        <div class="container">
+            <div class="row d-flex align-items-center justify-content-center text-center p-0 ">
+                <div class="col-md-4 col-12 anch">
+                    <a href="">
+                        <div>
+                            <p>Free delivery on all orders above EGP 1999</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-12 anch">
+                    <a href="">
+                        <div>
+                            <p>Free returns available online and in store</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-12 anch">
+                    <a href="">
+                        <div>
+                            <p>Shop online 24/7</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section> 
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-12">
+                    <owl-carousel-o [options]="offerSilder">
+                                <ng-template carouselSlide> 
+                                    <img height="auto" width="100%" src="../../../assets/images/remy_loz-VfVCv53bqdw-unsplash.jpg" alt="">
+                                    <div class="contText d-flex flex-column align-items-center text-center top-50 start-50 translate-middle position-absolute ">
+                                        <h2>Get your Offers</h2> 
+                                        <h3>Relaxed Fit High shorts</h3>
+                                        <button class="btn btn-dark">Shop Now</button>
+                                    </div>
+                                </ng-template>
+                                <ng-template carouselSlide> 
+                                    <img height="auto" width="100%" src="../../../assets/images/walter-randlehoff-p-08ZLDt9y4-unsplash.jpg" alt=""> 
+                                    <div class="contText d-flex flex-column align-items-center text-center top-50 start-50 translate-middle position-absolute ">
+                                        <h2>Get your Offers</h2> 
+                                        <h3>Resort shirt Relaxed fit</h3>
+                                        <button class="btn btn-default">Shop Now</button>
+                                    </div>
+                                </ng-template>
+                                <ng-template carouselSlide> 
+                                    <img height="auto" width="100%" src="../../../assets/images/25041.jpg" alt=""> 
+                                    <div class="contText d-flex flex-column align-items-center text-center top-50 start-50 translate-middle position-absolute ">
+                                        <h2>Get your Offers</h2>
+                                        <h3>Relaxed Fit Linen-blend shorts</h3>
+                                        <button class="btn btn-dark">Shop Now</button>
+                                    </div>
+                                </ng-template>
+                            </owl-carousel-o>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 trend">
+                    <h2 class="recomend">Trending now</h2>
+                    <div class="btn-trend">
+                        <button routerLinkActive="isActive" (click)="getprodCatName('woman')" class="btn btn-danger">Women</button>
+                        <button routerLinkActive="isActive" (click)="getprodCatName('men')" class="btn btn-danger">Men</button>
+                        <button routerLinkActive="isActive" (click)="getprodCatName('baby')" class="btn btn-danger">Baby</button>
+                        <button routerLinkActive="isActive" (click)="getprodCatName('sport')" class="btn btn-danger">Sport</button>
+                        <button routerLinkActive="isActive" (click)="getprodCatName('')" class="btn btn-danger">All</button>
+                    </div>
+                    <owl-carousel-o [options]="categoryOptions">
+                        <ng-container *ngFor="let item of categoryName">
+                            <ng-template class="ng-template " carouselSlide>
+                                <img [routerLink]="['/viewdetails', item.id]" class="img" height="400" width="200" style="margin-right: 10px;" [src]="item?.image" [alt]="item?.title" [title]="item?.title">
+                                <h3 class="h6 text-main"> {{item?.shopName}} </h3>
+                                <p> {{item?.price|currency:"EGP"}} </p>
+                            </ng-template>
+                        </ng-container>
+                    </owl-carousel-o>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container" id="slide">
+            <div class="row">
+                <!-- <div class="col-md-1"></div> -->
+                <div class="col-md-12">
+                    <h2 class="recomend mb-4">Recommended For You</h2>
+                        <!-- <button routerLinkActive="isActive" (click)="getprodCatName('')" class="btn btn-danger">All</button> -->
+                    <owl-carousel-o [options]="categoryOptions">
+                        <ng-container *ngFor="let item of categoryName">
+                            <ng-template class="ng-template " carouselSlide>
+                                <img [routerLink]="['/viewdetails', item.id]" class="img" height="400" width="200" style="margin-right: 10px;" [src]=" item?.image" [alt]="item?.title" [title]="item?.title" >
+                                <h3 class="h6 text-main"> {{item?.title}} </h3>
+                                <p> {{item?.vote_count|currency:"EGP"}} </p>
+                            </ng-template>
+                        </ng-container>
+                    </owl-carousel-o>
+                </div>
+                <!-- <div class="col-md-1"></div> -->
+            </div>
+        </div>
+    </section>
+    
+    <section>
+        <div class="container">
+            <h2 class="text-center fw-bold  " style="font-size: 18px;">Our Latest Products</h2>
+            <div class="row">
+                <div class="col-md-12 first">
+                    <div class="colum">
+                        <div class="container-img" *ngFor="let item of categoryName"> 
+                            <img routerLink="/viewdetails" [src]="item?.image" alt="">
+                            <div class="icon">
+                                <svg  width="40" height="30" viewBox="0 0 24 24" (click)="addToFavourites(item.id)" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke="black" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                                </svg>
+                                    <svg  width="40" height="30" viewBox="0 0 24 24" (click)="addProdCart(item.id, UId)" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19 13H13V19H11V13H5V11H11V5H13V11H19V13Z" fill="currentColor"/>
+                                    </svg>
+                            </div>
+                            <!-- <div class="profile" routerLink="/seller-account/{{item.shopId}}"> -->
+                            <div class="profile" (click)="getShop(item.shopId)">
+                                <img [src]="item.shopImage" alt="">
+                                <h5>{{item.shopName}}</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="colum">
+                        <div class="container-img" *ngFor="let item of categoryName"> 
+                            <img routerLink="/viewdetails" [src]="item?.image" alt="">
+                            <div class="icon">
+                                <svg  width="40" height="30" viewBox="0 0 24 24" (click)="addToFavourites(item.id)" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke="black" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                                </svg>
+                                    <svg  width="40" height="30" viewBox="0 0 24 24" (click)="addProdCart(item.id, UId)" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19 13H13V19H11V13H5V11H11V5H13V11H19V13Z" fill="currentColor"/>
+                                    </svg>
+                            </div>
+                            <!-- <div class="profile" routerLink="/seller-account/{{item.shopId}}"> -->
+                            <div class="profile" (click)="getShop(item.shopId)">
+                                <img [src]="item.shopImage" alt="">
+                                <h5>{{item.shopName}}</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="colum">
+                        <div class="container-img" *ngFor="let item of categoryName"> 
+                            <img routerLink="/viewdetails" [src]="item?.image" alt="">
+                            <div class="icon">
+                                <svg  width="40" height="30" viewBox="0 0 24 24" (click)="addToFavourites(item.id)" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke="black" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                                </svg>
+                                    <svg  width="40" height="30" viewBox="0 0 24 24" (click)="addProdCart(item.id, UId)" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19 13H13V19H11V13H5V11H11V5H13V11H19V13Z" fill="currentColor"/>
+                                    </svg>
+                            </div>
+                            <div class="profile" (click)="getShop(item.shopId)">
+                                <img [src]="item.shopImage" alt="">
+                                <h5>{{item.shopName}}</h5>
+                            </div>
+                        </div>
+                    </div> -->
+                    
+                
+                    <div class="colum">
+                        <div class="container-img">
+                        <img routerLink="/viewdetails" src="../../../assets/images/jeffery-erhunse-vjXP64dTovI-unsplash.jpg" alt="">
+                        <div class="icon">
+                                <svg  width="40" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke="black" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                                </svg>
+                                <svg width="40" height="30" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 13H13V19H11V13H5V11H11V5H13V11H19V13Z" fill="currentColor"/>
+                                </svg>
+                            </div>
+                            <div class="profile" routerLink="/seller-account">
+                                <img src="../../../assets/images/andrik-langfield-AAfC-hQpyWM-unsplash.jpg" alt="">
+                                <h5>jackFashion</h5>
+                            </div>
+                        </div>
+                        
+                        <div class="container-img">
+                        <img routerLink="/viewdetails" src="../../../assets/images/jeffery-erhunse-vjXP64dTovI-unsplash.jpg" alt="">
+                        <div class="icon">
+                                <svg  width="40" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke="black" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                                </svg>
+                                <svg width="40" height="30" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 13H13V19H11V13H5V11H11V5H13V11H19V13Z" fill="currentColor"/>
+                                </svg>
+                            </div>
+                            <div class="profile" routerLink="/seller-account">
+                                <img src="../../../assets/images/andrik-langfield-AAfC-hQpyWM-unsplash.jpg" alt="">
+                                <h5>jackFashion</h5>
+                            </div>
+                        </div>
+                        <div class="container-img">
+                                <img routerLink="/viewdetails" src="../../../assets/images/studio-reasons-Uc6Ctj_wm4w-unsplash.jpg" alt="">
+                                <div class="icon">
+                                <svg  width="40" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke="black" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                                </svg>
+                                <svg width="40" height="30" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 13H13V19H11V13H5V11H11V5H13V11H19V13Z" fill="currentColor"/>
+                                </svg>
+                            </div>
+                            <div class="profile" routerLink="/seller-account">
+                                <img src="../../../assets/images/andrik-langfield-AAfC-hQpyWM-unsplash.jpg" alt="">
+                                <h5>jackFashion</h5>
+                            </div>
+                            </div>
+                        <div class="container-img">
+                        <img routerLink="/viewdetails" src="../../../assets/images/jeffery-erhunse-vjXP64dTovI-unsplash.jpg" alt="">
+                        <div class="icon">
+                                <svg  width="40" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke="black" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                                </svg>
+                                <svg width="40" height="30" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 13H13V19H11V13H5V11H11V5H13V11H19V13Z" fill="currentColor"/>
+                                </svg>
+                            </div>
+                            <div class="profile" routerLink="/seller-account">
+                                <img src="../../../assets/images/andrik-langfield-AAfC-hQpyWM-unsplash.jpg" alt="">
+                                <h5>jackFashion</h5>
+                            </div>
+                        </div>
+                        <div class="container-img">
+                                <img routerLink="/viewdetails" src="../../../assets/images/karsten-winegeart-CIeE1Pg5-YU-unsplash.jpg" alt="">
+                                <div class="icon">
+                                <svg  width="40" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke="black" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                                </svg>
+                                <svg width="40" height="30" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 13H13V19H11V13H5V11H11V5H13V11H19V13Z" fill="currentColor"/>
+                                </svg>
+                            </div>
+                            <div class="profile" routerLink="/seller-account">
+                                <img src="../../../assets/images/andrik-langfield-AAfC-hQpyWM-unsplash.jpg" alt="">
+                                <h5>jackFashion</h5>
+                            </div>
+                            </div>
+                            <div class="container-img">
+                                <img routerLink="/viewdetails" src="../../../assets/images/karsten-winegeart-CIeE1Pg5-YU-unsplash.jpg" alt="">
+                                <div class="icon">
+                                <svg  width="40" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke="black" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                                </svg>
+                                <svg width="40" height="30" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 13H13V19H11V13H5V11H11V5H13V11H19V13Z" fill="currentColor"/>
+                                </svg>
+                            </div>
+                            <div class="profile" routerLink="/seller-account">
+                                <img src="../../../assets/images/andrik-langfield-AAfC-hQpyWM-unsplash.jpg" alt="">
+                                <h5>jackFashion</h5>
+                            </div>
+                            </div>
+                             <div class="container-img">
+                                <img routerLink="/viewdetails" src="../../../assets/images/corinne-kutz-j_9drN8w6gw-unsplash.jpg" alt="">
+                                <div class="icon">
+                                <svg  width="40" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke="black" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                                </svg>
+                                <svg width="40" height="30" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 13H13V19H11V13H5V11H11V5H13V11H19V13Z" fill="currentColor"/>
+                                </svg>
+                            </div>
+                            <div class="profile" routerLink="/seller-account">
+                                <img src="../../../assets/images/andrik-langfield-AAfC-hQpyWM-unsplash.jpg" alt="">
+                                <h5>jackFashion</h5>
+                            </div>
+                            </div>
+                    </div>
+                        <!-- <div class="colum">
+                            <div class="container-img">
+                                <img routerLink="/viewdetails" src="../../../assets/images/karsten-winegeart-CIeE1Pg5-YU-unsplash.jpg" alt="">
+                                <div class="icon">
+                                <svg  width="40" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke="black" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                                </svg>
+                                <svg width="40" height="30" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 13H13V19H11V13H5V11H11V5H13V11H19V13Z" fill="currentColor"/>
+                                </svg>
+                            </div>
+                            <div class="profile" routerLink="/seller-account">
+                                <img src="../../../assets/images/andrik-langfield-AAfC-hQpyWM-unsplash.jpg" alt="">
+                                <h5>jackFashion</h5>
+                            </div>
+                            </div>
+                            <div class="container-img">
+                                <img routerLink="/viewdetails" src="../../../assets/images/jeffery-erhunse-vjXP64dTovI-unsplash.jpg" alt="">
+                                <div class="icon">
+                                <svg  width="40" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke="black" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                                </svg>
+                                <svg width="40" height="30" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 13H13V19H11V13H5V11H11V5H13V11H19V13Z" fill="currentColor"/>
+                                </svg>
+                            </div>
+                            <div class="profile" routerLink="/seller-account">
+                                <img src="../../../assets/images/andrik-langfield-AAfC-hQpyWM-unsplash.jpg" alt="">
+                                <h5>jackFashion</h5>
+                            </div>
+                            </div>
+                            <div class="container-img" >
+                                <img routerLink="/viewdetails"  src="../../../assets/images/walter-randlehoff-p-08ZLDt9y4-unsplash.jpg" alt="">
+                                <div class="icon">
+                                <svg  width="40" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke="black" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                                </svg>
+                                <svg width="40" height="30" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 13H13V19H11V13H5V11H11V5H13V11H19V13Z" fill="currentColor"/>
+                                </svg>
+                            </div>
+                            <div class="profile" routerLink="/seller-account">
+                                <img src="../../../assets/images/andrik-langfield-AAfC-hQpyWM-unsplash.jpg" alt="">
+                                <h5>jackFashion</h5>
+                            </div>
+                            </div>
+                            <div class="container-img">
+                                <img routerLink="/viewdetails" src="../../../assets/images/studio-reasons-Uc6Ctj_wm4w-unsplash.jpg" alt="">
+                                <div class="icon">
+                                <svg  width="40" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke="black" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                                </svg>
+                                <svg width="40" height="30" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 13H13V19H11V13H5V11H11V5H13V11H19V13Z" fill="currentColor"/>
+                                </svg>
+                            </div>
+                            <div class="profile" routerLink="/seller-account">
+                                <img src="../../../assets/images/andrik-langfield-AAfC-hQpyWM-unsplash.jpg" alt="">
+                                <h5>jackFashion</h5>
+                            </div>
+                            </div>
+                            <div class="container-img">
+                                <img routerLink="/viewdetails" src="../../../assets/images/corinne-kutz-j_9drN8w6gw-unsplash.jpg" alt="">
+                                <div class="icon">
+                                <svg  width="40" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke="black" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                                </svg>
+                                <svg width="40" height="30" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 13H13V19H11V13H5V11H11V5H13V11H19V13Z" fill="currentColor"/>
+                                </svg>
+                            </div>
+                            <div class="profile" routerLink="/seller-account">
+                                <img src="../../../assets/images/andrik-langfield-AAfC-hQpyWM-unsplash.jpg" alt="">
+                                <h5>jackFashion</h5>
+                            </div>
+                            </div>
+                        </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <app-footer></app-footer>

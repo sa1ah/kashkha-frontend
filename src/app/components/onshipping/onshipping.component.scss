@@ -1,0 +1,32 @@
+section{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+.container{
+    max-width: 100%;
+}
+
+
+.container h2{
+    margin-left: 176px;
+}
+
+
+
+
+section .container .row .first{
+    margin-left: 50px;
+    background-color: red;
+    width: 80%;
+    height: 50px;
+    padding: 0.9375rem 0.625rem;
+    margin: auto;
+}
+
+
+
+section .container .row .first .bod .row p span{
+    color: #d6001c;
+    font-size: 0.950rem;
+}

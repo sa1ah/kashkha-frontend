@@ -1,0 +1,174 @@
+section{
+    box-sizing: border-box;
+  position: relative;
+  padding: 10px 20px;
+  display: block;
+}
+section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+.container{
+    width: 100%;
+}
+section .container h1{
+    letter-spacing: 0.8px;
+    font-size: 2.5rem;
+    line-height: 3rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+hr{
+    margin-top: 0;
+}
+////////////////////////////////////////
+section .container .content{
+    text-align: center;
+    padding-top: 4.375rem;
+}
+section .container .content a{
+    width: 11.5rem;
+    height: 2.5rem;
+    display: inline-block;
+    padding: 0.375rem 0;
+    border-radius: 0.1875rem;
+    background: #222;
+    color: #fff;
+    font-family: "HM Sans Bold","HM Sans Arabic Bold","sans-serif","Arial";
+    line-height: 1.5;
+    text-decoration: none;
+}
+section .container .content a:hover{
+    opacity: 0.7;
+    background-color: #707070;
+}
+
+
+
+
+
+.productimg{
+    max-width: 100%;
+    margin-bottom: 10px;
+}
+
+.productimg img{
+    max-width: 100%;
+    // height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+
+
+.description h2,p{
+    font-size: 0.9125rem;
+    font-weight: bold;
+}
+
+
+.addtobasket{
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+.addtobasket button{
+    padding: 15px 0;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+///////////////////////////////////////////////////////////////////////////
+.owl-dots {
+    position: relative;
+    bottom: 40px;
+}
+
+
+.owl-dot {
+    height: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative;
+    bottom: 2px;
+    
+}
+
+
+
+div.owl-dots{
+    background-color: hsl(34, 44%, 69%);
+    box-sizing: border-box;
+}
+
+
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+    background-color: red;
+}
+
+
+
+.owl-theme[_ngcontent-ng-c2947750150]:hover .owl-nav.disabled + .owl-dots {
+    visibility: visible;
+    opacity: 1;  
+    transform: translateY(0);  
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+    margin-top: 6px;
+    margin-right: 1px;
+}
+
+
+.owl-theme .owl-nav.disabled + .owl-dots {
+    visibility: visible;
+    opacity: 0;
+    transform: translateY(20px); 
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin-right: 1px;
+
+}
+
+
+
+////////////////////////
+
+.owl-carousel .owl-item {
+  flex: 1 0 100%;
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  box-sizing: border-box; 
+}
+
+.owl-carousel .owl-stage {
+  display: flex;
+  flex-wrap: nowrap;
+    max-width: 100%;
+    object-fit: cover;    
+}
+.owl-carousel {
+  width: auto;
+  overflow: hidden;
+  position: relative;
+}
+
+
+
+
+
